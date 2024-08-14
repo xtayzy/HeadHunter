@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            margin: 200px auto;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .register {
+            background-color: #ff1643;
+        }
+
+        .register:hover {
+            background-color: #ff5454;
+        }
+
+        .login {
+            background-color: #1e88e5;
+        }
+
+        .login:hover {
+            background-color: #42a5f5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="{% url 'register' %}" class="register">Зарегистрироваться</a>
+    <a href="{% url 'login' %}" class="login">Авторизоваться</a>
+</div>
+</body>
+</html>

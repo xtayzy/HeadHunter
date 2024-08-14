@@ -1,0 +1,21 @@
+{% extends 'hh/layouts/base.html' %}
+
+
+{% block title %}
+	Резюме
+{% endblock %}
+
+
+{% block content %}
+    <div class="block">
+        <div class="vacancies">
+            {% for vac in resumes %}
+            	<a href="{% url 'resume_detail' pk=vac.id %}" class="vacancy">
+                    <div>{{ vac.vac_name.name }}</div>
+                    <div>{{ vac.name }} {{ vac.surname }}</div>
+                    <div>{{ vac.skills}} </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

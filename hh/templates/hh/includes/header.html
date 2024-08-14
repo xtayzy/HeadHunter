@@ -1,0 +1,11 @@
+<a href="{% url 'index' %}">Вакансии</a>
+{% if not request.user.is_staff %}
+    <a href="{% url 'resume' %}">Резюме</a>
+{% endif %}
+{% if request.user.is_staff %}
+    <a href="{% url 'resumes' %}">Резюме</a>
+    <a href="{% url 'vacancy' %}">Доб. вакансию</a>
+{% endif %}
+<a href="{% url 'logout_page' %}">Выйти</a>
+
+

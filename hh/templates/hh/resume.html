@@ -1,0 +1,29 @@
+{% extends 'hh/layouts/base.html' %}
+
+{% block title %}
+    Резюме
+{% endblock %}
+
+{% block content %}
+    {% if not resume %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Добавить резюме</button>
+        </form>
+    {% else %}
+        <div class="vacancy_det">
+            <div>name: {{ resume.skills }}</div>
+            <div>surname: {{ resume.surname }}</div>
+            <div>otchestvo: {{ resume.otchestvo }}</div>
+            <div>profession: {{ resume.profession.name }}</div>
+            <div>date of birth: {{ resume.date_of_birth }}</div>
+            <div>email: {{ resume.email }}</div>
+            <div>skills: {{ resume.skills }}</div>
+            <div>experience: {{ resume.experience }}</div>
+            <div>education: {{ resume.education }}</div>
+            <a href="{% url 'resume_delete' pk=resume.id %}">Удалить</a>
+            <a href="{% url 'resume_update' pk=resume.id %}">Редактировать</a>
+        </div>
+    {% endif %}
+{% endblock %}

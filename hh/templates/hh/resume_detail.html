@@ -1,0 +1,20 @@
+{% extends 'hh/layouts/base.html' %}
+
+
+{% block title %}
+    Vacancy Detail
+{% endblock %}
+
+{% block content %}
+    <div class="vacancies">
+        <div class="vacancy_det">
+            <div> {{ vacancy.vax_name.name }} </div>
+            <div> ФИО: {{ vacancy.name }} {{ vacancy.surname }} {{ vacancy.otchestvo }}</div>
+            <div> дата рождения: {{ vacancy.date_of_birth }}</div>
+            <div> навыки: {{ vacancy.skills }}</div>
+            <div> опыт: {{ vacancy.experience }}</div>
+            <div> образование: {{ vacancy.education }}</div>
+            <div> емаил: {{ vacancy.email }}</div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'hh/layouts/base.html' %}
+
+
+{% block title %}
+    Vacancy Detail
+{% endblock %}
+
+{% block content %}
+    <div class="vacancies">
+        <div class="vacancy_det">
+            <div> {{ vacancy.profession.name }} </div>
+            <div> требуемые навыки: {{ vacancy.skills }} </div>
+            <div> обязанности: {{ vacancy.res }} </div>
+            <div> зарплата: {{ vacancy.salary }}$</div>
+            <div> компания: {{ vacancy.company }} </div>
+            <div> адресс: {{ vacancy.address }} </div>
+        </div>
+    </div>
+{% endblock %}

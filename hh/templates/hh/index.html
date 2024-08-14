@@ -1,0 +1,24 @@
+{% extends 'hh/layouts/base.html' %}
+
+
+{% block title %}
+	Вакансии
+{% endblock %}
+
+
+{% block content %}
+    <div class="block">
+        <div class="vacancies">
+            {% for vac in vacancies %}
+            	<a href="{% url 'vacancy_detail' pk=vac.id %}" class="vacancy">
+                    <div>{{ vac.profession.name }}</div>
+                    <div>{{ vac.salary }}$</div>
+                    <div>company: {{ vac.company }}</div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+
+

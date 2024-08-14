@@ -1,0 +1,28 @@
+
+
+{% extends 'hh/layouts/base.html' %}
+
+{% block title %}
+    Резюме
+{% endblock %}
+
+{% block content %}
+    <div class="block">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Добавить вакансию</button>
+        </form>
+        <div class="vacancies">
+            {% for vac in vacancies %}
+                <div class="vacancy">
+                    <div>{{ vac.profession.name }}</div>
+                    <div>{{ vac.salary }}$</div>
+                    <div>company: {{ vac.company }}</div>
+                    <a href="{% url 'vacancy_delete' pk=vac.pk %}">удалить</a>
+                    <a href="{% url 'vacancy_update' pk=vac.pk %}">Редактировать</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

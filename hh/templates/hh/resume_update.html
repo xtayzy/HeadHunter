@@ -1,0 +1,15 @@
+{% extends 'hh/layouts/base.html' %}
+
+{% block title %}
+    Резюме
+{% endblock %}
+
+{% block content %}
+    <div class="block">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Обновить</button>
+        </form>
+    </div>
+{% endblock %}
